@@ -3,16 +3,19 @@ import React, { useContext } from 'react';
 import { TeamContext } from '../context/team.context';
 
 const Team = () => {
-  const team = useContext(TeamContext);
+  const { team, deleteTeamMember } = useContext(TeamContext);
 
   return (
     <>
       <h3>Team</h3>
       <ul>
         {team.map(member => (
-          <li key={member.id}>
-            {member.name}
-          </li>
+          <div key={member.id}>
+            <li>
+              {member.name}
+            </li>
+            <button onClick={() => deleteTeamMember(member.id)}>Delete</button>
+          </div>
         ))}
       </ul>
     </>

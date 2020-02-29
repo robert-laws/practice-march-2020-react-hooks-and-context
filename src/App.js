@@ -4,6 +4,7 @@ import './App.scss';
 import { TeamProvider } from './context/team.context';
 
 import Team from './components/Team.component';
+import AddTeamMember from './components/AddTeamMember.component';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <hr/>
         <TeamProvider>
           <Team />
+          <AddTeamMember />
         </TeamProvider>
       </div>
     </>
